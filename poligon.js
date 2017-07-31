@@ -1,11 +1,14 @@
 positions = []
-function getPoligonOrientation(position=0, number_items, width=9, height=2, parity="pair"){
+function getPoligonOrientation(number_items, position=0, width=3, height=2, parity="pair"){
     let space_width;
     if(parity == "pair" ){
-        debugger;
-        space_width = number_items/height;
-        for(let x = 0; x<=number_items; x++){
-            positions.append(1);
+        space_width = width/number_items;
+        for(let x = 1; x<=number_items; x++){
+            space = space_width * x
+            positions.push({
+              'x': space_width * x,
+              'y': -Math.sqrt(width*height-space^2/2)  
+            });
         }
         return positions;
     }
@@ -33,4 +36,5 @@ function getSlideNumbers(number){
 
 function createSlides(pair, odd){
     pair_position = this.getPoligonOrientation(pair)
+    console.log(pair_position)
 }
