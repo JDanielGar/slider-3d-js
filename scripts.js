@@ -1,5 +1,3 @@
-this.showSlider(2)
-
 var activeElement;
 
 function showSlider(number_of_items){
